@@ -12,10 +12,10 @@ export default function Home() {
 
     const handleButtonClick = async () => {
         try {
-            // const code = await roomService.createRoom();
+            const code = await roomService.createRoom();
             history.push({
                 pathname: '/jogo',
-                state: { code: 'testando', nickname: 'josé' }
+                state: { code, playername: 'josé' }
             });
         } catch (e) {
             console.log(e);
