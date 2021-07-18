@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import WebSocketService from "../../services/ws.service";
 
 export default function Game() {
 
@@ -8,7 +9,8 @@ export default function Game() {
     console.log("🚀 ~ file: index.tsx ~ line 6 ~ Game ~ code", code)
 
     useEffect(() => {
-        
+        WebSocketService.connect();
+        WebSocketService.subscribeToTopic('/game', (msg) => { console.log(msg) })
     }, [])
     return (
         <>

@@ -36,7 +36,7 @@ const isConnected = (): boolean => {
     return client.connected;
 }
 
-const subscribeToTopic = (topic: string, messageCallback: (msg: Stomp.Message) => {}): void => {
+const subscribeToTopic = (topic: string, messageCallback: (msg: Stomp.Message) => void): void => {
     client.subscribe(topic, messageCallback);
 }
 
