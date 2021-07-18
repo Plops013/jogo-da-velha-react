@@ -1,0 +1,47 @@
+.background-container {
+    position: relative;
+    flex: 1;
+    z-index: 5;
+    background-color: black;
+    padding: 80px;
+    padding-top: 0px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.background-container .background {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(../../assets/background.jpg);
+    opacity: .15;
+    flex: 1;
+}
+
+.game-name {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 64px;
+    line-height: 87px;
+    color: #FFFFFF;
+    text-shadow: 0px 0px 12px #4AAA5F;
+}
+
+.container {
+    background: radial-gradient(100% 729.55% at 0% 0%, rgba(240, 240, 240, 0.5625) 0%, rgba(240, 240, 240, 0.2625) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    box-sizing: border-box;
+    backdrop-filter: blur(160px);
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
