@@ -39,7 +39,4 @@ jobs:
       - run: git config --global user.name "Plops013"
             
       - name: Build e deploy 
-        run: CI=false npm run deploy
-        env:
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+        run: NODE_DEBUG=gh-pages CI=false npm run deploy
