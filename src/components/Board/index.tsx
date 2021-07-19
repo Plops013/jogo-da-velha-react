@@ -5,7 +5,7 @@ interface IBoardProps {
     onClickSquare: (row: number, column: number) => void;
 }
 
-export default function Board({ boardState, onClickSquare }: IBoardProps) {
+export default function     Board({ boardState, onClickSquare }: IBoardProps) {
 
     const isPositionChecked = (row: number, column: number) => {
         return !!boardState && !!boardState[row][column];
