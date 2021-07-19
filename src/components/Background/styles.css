@@ -1,16 +1,16 @@
 .background-container {
     position: relative;
-    flex: 1;
     z-index: 5;
     background-color: black;
-    padding: 80px;
+    padding: 80px 10vw;
     padding-top: 0px;
     display: flex;
     flex: 1;
     flex-direction: column;
+    overflow: auto;
 }
 
-.background-container .background {
+.background {
     position: absolute;
     z-index: -1;
     top: 0;
@@ -28,8 +28,7 @@
     font-family: Nunito;
     font-style: normal;
     font-weight: 200;
-    font-size: 64px;
-    line-height: 87px;
+    font-size: 5em;
     color: #FFFFFF;
     text-shadow: 0px 0px 12px #4AAA5F;
 }
@@ -41,7 +40,5 @@
     backdrop-filter: blur(160px);
     border-radius: 16px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex: 1;
 }

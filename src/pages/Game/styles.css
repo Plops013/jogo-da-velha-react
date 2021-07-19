@@ -1,0 +1,118 @@
+.game-container {
+    padding: 80px;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.game-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+}
+
+.game-info-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.game-container .room-name {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 40px;
+    max-height: 80px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3em;
+    min-width: 8em;
+    max-width: 80;
+    color: #FFFFFF;
+    height: 80px;
+    background: #222222;
+    border-radius: 16px;
+}
+
+.game-container .player-turn {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 40px;
+    max-height: 80px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3em;
+    min-width: 8em;
+    max-width: 80;
+    color: #FFFFFF;
+    height: 80px;
+    background: #222222;
+    border-radius: 16px;
+    margin-top: 24px;
+}
+
+.game-container .room-status {
+    margin-left: 24px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 40px;
+    max-height: 80px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3em;
+    color: #FFFFFF;
+    height: 80px;
+    max-width: 120px;
+    background: #222222;
+    border-radius: 16px;
+}
+
+.game-container .status-on {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    margin-right: 12px;
+    background-color: #4AAA5F;
+}
+
+.game-container .status-off {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    margin-right: 12px;
+    background-color: #AA4A4A;
+}
+
+.player-x {
+    color: #AA4A84;
+    margin-left: 12px;
+}
+
+.player-o {
+    color: #35CBCB;
+    margin-left: 12px;
+}
+
+@media (max-width: 1268px) {
+    .game-info {
+        padding-left: 0px;
+    }
+}
