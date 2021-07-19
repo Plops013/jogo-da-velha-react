@@ -36,6 +36,9 @@ jobs:
       
       - name: Instalando pacotes
         run: npm i
+        
+      - run: git config --global user.email "pecorafatec@gmail.com"
+      - run: git config --global user.name "Fabio Pecora Lopes
       
       - name: Build e deploy 
         run: CI=false npm run deploy
