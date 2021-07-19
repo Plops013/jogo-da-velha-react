@@ -37,9 +37,7 @@ jobs:
                
       - run: git config --global user.email "pecorafatec@gmail.com"
       - run: git config --global user.name "plops013"
-      
-      - run: git remote set-url https://${{ secrets.GITHUB_TOKEN }}@github.com/plops013/jogo-da-velha-react.git 
-      
+            
       - name: Build e deploy 
         run: CI=false npm run deploy
         env:
