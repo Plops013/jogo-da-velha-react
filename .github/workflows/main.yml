@@ -32,8 +32,6 @@ jobs:
         with: 
           node-version: 12.8.0
           
-      - run: git config --global url."https://${{ secrets.PAT }}@github.com/".insteadOf ssh://git@github.com/
-      
       - name: Instalando pacotes
         run: npm i
         
