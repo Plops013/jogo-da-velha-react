@@ -35,9 +35,18 @@ jobs:
       - name: Instalando pacotes
         run: npm i
         
+      - uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+        
       - run: git config --global user.email "pecorafatec@gmail.com"
       - run: git config --global user.name "plops013"
       
+      - run: git remote set-url https://${{ secrets.GITHUB_TOKEN }}@github.com/plops013/jogo-da-velha-react.git 
+      
       - name: Build e deploy 
         run: CI=false npm run deploy
+        env:
+            GH_TOKEN: MyCompany:${{ secrets.GITHUB_TOKEN }}
 
