@@ -38,5 +38,9 @@ jobs:
       - run: git config --global user.email "pecorafatec@gmail.com"
       - run: git config --global user.name "Plops013"
             
-      - name: Build e deploy 
-        run: NODE_DEBUG=gh-pages CI=false npm run deploy
+      - name: Deploy with gh-pages
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          CI=false npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }
