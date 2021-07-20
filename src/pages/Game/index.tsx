@@ -1,32 +1,51 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import Background from "../../components/Background";
 import Board from "../../components/Board";
 import WebSocketService from "../../services/ws.service";
 import './styles.css';
 
+interface IGame {
+    playerName: string;
+    code: number;
+    action: string;
+}
+
 export default function Game() {
 
-    const { code, playerName, action } = (useLocation().state as any);
+    const locationState = useLocation().state;
+    const history = useHistory();
+
     const [boardState, setBoardState] = useState<Array<string[]>>();
+    const [game, setGame] = useState<IGame>();
     const [playerTurn, setPlayerTurn] = useState<string | undefined>(undefined);
 
     useEffect(() => {
-        const connectToServer = async (code: number, playerName: string) => {
-            await WebSocketService.connect();
-            WebSocketService.subscribeToTopic(`/room/${code}`, handleRoomMessage);
-            WebSocketService.subscribeToTopic(`/game/${code}`, handleGameMessage);
-            WebSocketService.sendMessage(`/app/room/${code}`, { action, playerName })
+        if (!locationState) {
+            history.push('/');
+            return;
         }
-        connectToServer(code, playerName);
+
+        const { code, playerName, action } = (locationState as any);
+        setGame({ code, playerName, action });
+        connectToServer(code, playerName, action);
         return () => {
-            WebSocketService.sendMessage(`/app/room/${code}`, { action: 'LEAVE', playerName })
-            WebSocketService.disconnect();
+            disconnect(code, playerName)
         }
-    }, [code, playerName])
+    }, [locationState])
 
+    const connectToServer = async (code: number, playerName: string, action: string) => {
+        await WebSocketService.connect();
+        WebSocketService.subscribeToTopic(`/room/${code}`, handleRoomMessage);
+        WebSocketService.subscribeToTopic(`/game/${code}`, handleGameMessage);
+        WebSocketService.sendMessage(`/app/room/${code}`, { action, playerName })
+    }
 
+    const disconnect = async (code: number, playerName: string) => {
+        WebSocketService.sendMessage(`/app/room/${code}`, { action: 'LEAVE', playerName })
+        WebSocketService.disconnect();
+    }
 
     const handleRoomMessage = (message: any) => {
         console.log('Room message:', message);
@@ -38,12 +57,12 @@ export default function Game() {
         handleBoardUpdate(gameMessage.board);
     }
 
-
     const handleBoardUpdate = (newBoardState: Array<string[]>) => {
+        if (!game) return;
         const newBoardStateMapped = newBoardState.map((row: string[]) => {
             return row.map((value) => {
-                if (value === playerName) return action === 'CREATE' ? 'X' : 'O';
-                else if (value !== '') return action === 'CREATE' ? 'O' : 'X'
+                if (value === game.playerName) return game.action === 'CREATE' ? 'X' : 'O';
+                else if (value !== '') return game.action === 'CREATE' ? 'O' : 'X'
                 else return '';
             })
         })
@@ -51,13 +70,15 @@ export default function Game() {
     }
 
     const handlePlay = (row: number, column: number) => {
-        WebSocketService.sendMessage(`/app/game/${code}`, { action: 'MOVE', playerName, x: row, y: column })
+        if (!game) return;
+        WebSocketService.sendMessage(`/app/game/${game.code}`, { action: 'MOVE', playerName: game.playerName, x: row, y: column })
     }
 
     const getPlayerTurnClass = () => {
-        return (playerTurn === playerName) ?
-            (action === 'CREATE') ? 'player-x' : 'player-o' :
-            (action === 'CREATE') ? 'player-o' : 'player-x'
+        if (!game) return;
+        return (playerTurn === game.playerName) ?
+            (game.action === 'CREATE') ? 'player-x' : 'player-o' :
+            (game.action === 'CREATE') ? 'player-o' : 'player-x'
     }
 
     return (
@@ -66,7 +87,7 @@ export default function Game() {
                 <Board onClickSquare={(row, column) => handlePlay(row, column)} boardState={boardState} />
                 <div className="game-info">
                     <p className="room-name">
-                        SALA: #{code}
+                        SALA: #{(!!game) && game.code}
                     </p>
                     <p className="player-turn">
                         Vez de <span className={getPlayerTurnClass()}>{playerTurn}</span>

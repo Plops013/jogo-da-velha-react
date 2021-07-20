@@ -4,4 +4,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 24px;
+}
+
+.home-image {
+    width: 100%;
+    max-width: 330px;
 }

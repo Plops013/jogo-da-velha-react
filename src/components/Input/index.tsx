@@ -1,5 +1,4 @@
 import './styles.css';
-
 interface IInputProps {
     onChange?: (val: string) => void
 }

@@ -10,16 +10,20 @@ import { useState } from 'react';
 export default function Home() {
 
     const history = useHistory();
+    const [loading, setLoading] = useState<boolean>(false);
     const [playerName, setPlayerName] = useState<string>('')
 
     const handleButtonClick = async () => {
         try {
+            setLoading(true);
             const code = await roomService.createRoom();
+            setLoading(false);
             history.push({
                 pathname: '/jogo',
                 state: { action: 'CREATE', code, playerName }
             });
         } catch (e) {
+            setLoading(false);
             console.log(e);
         }
     }
@@ -27,9 +31,9 @@ export default function Home() {
     return (
         <Background>
             <div className="content">
-                <img src={User} alt="Usuário" />
+                <img className='' src={User} alt="Usuário" />
                 <Input onChange={(inputVal) => setPlayerName(inputVal)}/>
-                <Button onClick={handleButtonClick}>CRIAR SALA</Button>
+                <Button loading={loading} onClick={handleButtonClick}>CRIAR SALA</Button>
             </div>
         </Background>
     )

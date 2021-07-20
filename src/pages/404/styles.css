@@ -1,0 +1,21 @@
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.not-found-image {
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.not-found-message {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 65px;
+    color: #FFFFFF;
+}

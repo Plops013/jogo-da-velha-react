@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Jogo da Velha",
+  "name": "Jogo Da Velha Web em React",
   "icons": [
     {
       "src": "favicon.ico",
