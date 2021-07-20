@@ -1,8 +1,8 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  BrowserRouter
 } from "react-router-dom";
 import Game from "../pages/Game";
 import Home from "../pages/Home";
@@ -10,7 +10,7 @@ import JoinRoom from "../pages/JoinRoom";
 
 export default function Routes() {
   return (
-    <Router>
+    <BrowserRouter>
       <Switch>
         <Route exact path="/">
           <Home />
@@ -22,6 +22,6 @@ export default function Routes() {
           <Game />
         </Route>
       </Switch>
-    </Router>
+    </BrowserRouter>
   );
 }
