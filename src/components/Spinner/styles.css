@@ -52,9 +52,9 @@
   }
   .spinner {
       display: inline-block;
-      font-size:4em;
-      width: 60px;
-      height: 60px;
+      font-size:3em;
+      width: 40px;
+      height: 40px;
       line-height: 1;
       animation: anim-rotate 2s infinite linear;
       color: #fff;
