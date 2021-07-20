@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/jogo-da-velha-react/static/css/main.80862657.chunk.css",
-    "main.js": "/jogo-da-velha-react/static/js/main.820fbdd9.chunk.js",
-    "main.js.map": "/jogo-da-velha-react/static/js/main.820fbdd9.chunk.js.map",
+    "main.js": "/jogo-da-velha-react/static/js/main.4c2d7193.chunk.js",
+    "main.js.map": "/jogo-da-velha-react/static/js/main.4c2d7193.chunk.js.map",
     "runtime-main.js": "/jogo-da-velha-react/static/js/runtime-main.da0e8961.js",
     "runtime-main.js.map": "/jogo-da-velha-react/static/js/runtime-main.da0e8961.js.map",
     "static/js/2.8a663e36.chunk.js": "/jogo-da-velha-react/static/js/2.8a663e36.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.da0e8961.js",
     "static/js/2.8a663e36.chunk.js",
     "static/css/main.80862657.chunk.css",
-    "static/js/main.820fbdd9.chunk.js"
+    "static/js/main.4c2d7193.chunk.js"
   ]
 }
