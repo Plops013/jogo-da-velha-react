@@ -25,18 +25,22 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          persist-credentials: false
+          persist-credentials: true
     
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.2.0
         with: 
           node-version: 12.8.0
           
-      - run: git config --global url."https://${{ secrets.PAT }}@github.com/".insteadOf ssh://git@github.com/
-      
       - name: Instalando pacotes
         run: npm i
-      
-      - name: Build e deploy 
-        run: CI=false npm run deploy
-
+               
+      - run: git config --global user.email "pecorafatec@gmail.com"
+      - run: git config --global user.name "Plops013"
+            
+      - name: Deploy with gh-pages
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          CI=false npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
