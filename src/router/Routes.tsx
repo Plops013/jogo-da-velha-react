@@ -5,10 +5,10 @@ import {
   BrowserRouter,
   Redirect
 } from "react-router-dom";
-import PageNotFound from "../pages/404";
 import Game from "../pages/Game";
 import Home from "../pages/Home";
 import JoinRoom from "../pages/JoinRoom";
+import PageNotFound from '../pages/404';
 
 export default function Routes() {
   return (
