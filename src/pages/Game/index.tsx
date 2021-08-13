@@ -31,7 +31,7 @@ export default function Game() {
     }
 
     const copyRoomLinkToClipboard = () => {
-        navigator.clipboard.writeText(`${window.location.host}/sala/${game.id}`);
+        navigator.clipboard.writeText(`${window.location.host}/jogo-da-velha-react/sala/${game.id}`);
     }
 
     return (
