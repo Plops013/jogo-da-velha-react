@@ -1,10 +1,22 @@
 .game-container {
     padding: 80px;
     display: flex;
-    flex: 1;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
+
+@media (max-width: 768px) {
+    .game-container {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    
+}
+
 
 .game-info {
     flex: 1;
@@ -20,19 +32,40 @@
     justify-content: center;
 }
 
-.game-container .room-name {
+.game-container .game-error {
     text-align: center;
-    flex: 1;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    justify-content: center;
     padding: 0px 40px;
-    max-height: 80px;
     font-family: Nunito;
     font-style: normal;
     font-weight: bold;
-    font-size: 3em;
+    font-size: 1em;
+    text-align: center;
+    min-width: 8em;
+    max-width: 80;
+    color: #FFFFFF;
+    height: 80px;
+    background: #c81a1a;
+    border-radius: 16px;
+}
+
+.game-container .room-name {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 40px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
     min-width: 8em;
     max-width: 80;
     color: #FFFFFF;
@@ -41,20 +74,19 @@
     border-radius: 16px;
 }
 
-.game-container .player-turn {
+.game-container .game-status {
     text-align: center;
-    flex: 1;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    justify-content: center;
     padding: 0px 40px;
-    max-height: 80px;
     font-family: Nunito;
     font-style: normal;
     font-weight: bold;
-    font-size: 3em;
-    min-width: 8em;
+    font-size: 1em;
+    text-align: center;
     max-width: 80;
     color: #FFFFFF;
     height: 80px;
@@ -63,16 +95,39 @@
     margin-top: 24px;
 }
 
+.game-container .player-turn {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 40px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+    max-width: 80;
+    color: #FFFFFF;
+    height: 80px;
+    background: #222222;
+    border-radius: 16px;
+    margin-top: 24px;
+}
+
+.player-turn span {
+    margin-left: 8px;
+}
+
 .game-container .room-status {
     margin-left: 24px;
     text-align: center;
-    flex: 1;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 0px 40px;
-    max-height: 80px;
     font-family: Nunito;
     font-style: normal;
     font-weight: bold;
@@ -111,7 +166,7 @@
     margin-left: 12px;
 }
 
-@media (max-width: 1268px) {
+@media (max-width: 968px) {
     .game-info {
         padding-left: 0px;
     }

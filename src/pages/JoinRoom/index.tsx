@@ -17,10 +17,9 @@ export default function JoinRoom() {
     const [playerName, setPlayerName] = useState<string>('')
 
     const handleButtonClick = async () => {
-        const codeNumber = parseInt(code, 10);
         history.push({
             pathname: '/jogo',
-            state: { action: 'JOIN', code: codeNumber, playerName }
+            state: { action: 'JOIN', roomId: code, playerName }
         });
     }
 
@@ -28,9 +27,6 @@ export default function JoinRoom() {
         <Background>
             <div className="content">
                 <img src={User} alt="Usuário" />
-                <p className="join-room-name">
-                    SALA: #{code}
-                </p>
                 <Input onChange={(inputVal) => setPlayerName(inputVal)} />
                 <Button onClick={handleButtonClick}>ENTRAR NA SALA</Button>
             </div>

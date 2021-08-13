@@ -1,2 +1,2 @@
 export const env: string = 'development';
-export const endpoint: string = 'https://ffea6cf4a8ca.ngrok.io/';
+export const endpoint: string = 'https://jogo-da-velha-api.herokuapp.com/';

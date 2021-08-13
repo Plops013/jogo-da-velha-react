@@ -2,12 +2,26 @@
     position: relative;
     z-index: 5;
     background-color: black;
-    padding: 80px 10vw;
+    padding: 40px 10vw;
     padding-top: 0px;
     display: flex;
     flex: 1;
     flex-direction: column;
-    overflow: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1268px) {
+    .background-container {
+        position: relative;
+        z-index: 5;
+        background-color: black;
+        padding: 40px 4vw;
+        padding-top: 0px;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
 }
 
 .background {
@@ -40,6 +54,7 @@
     backdrop-filter: blur(160px);
     border-radius: 16px;
     display: flex;
-    flex: 1;
-    overflow: auto;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
 }

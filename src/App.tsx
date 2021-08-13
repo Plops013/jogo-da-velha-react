@@ -1,13 +1,15 @@
-import React from 'react';
 import './App.css';
+import { GameProvider } from './providers/game.provider';
 import Routes from './router/Routes';
 
 
 function App() {
   return (
-    <div className="App">
-      <Routes/>
-    </div>
+    <GameProvider>
+      <div className="App">
+        <Routes />
+      </div>
+    </GameProvider>
   );
 }
 

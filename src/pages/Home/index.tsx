@@ -3,7 +3,6 @@ import './styles.css';
 import User from '../../assets/user.svg';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
-import roomService from '../../services/room.service';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -16,11 +15,10 @@ export default function Home() {
     const handleButtonClick = async () => {
         try {
             setLoading(true);
-            const code = await roomService.createRoom();
             setLoading(false);
             history.push({
                 pathname: '/jogo',
-                state: { action: 'CREATE', code, playerName }
+                state: { action: 'CREATE', playerName }
             });
         } catch (e) {
             setLoading(false);
