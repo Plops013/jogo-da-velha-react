@@ -59,7 +59,8 @@ const GameProvider = ({ children }: any) => {
             },
             board: event[0].board.map((row: Array<string>) => {
                 return row.map((column: string) => {
-                    return (!!column) ? (column === game.player1.id) ? 'X' : 'O' : '';
+                    console.log("🚀 ~ file: game.provider.tsx ~ line 62 ~ returnrow.map ~ column", column)
+                    return (!!column) ? (column === event[0].player1.id) ? 'X' : 'O' : '';
                 })
             })
         });
