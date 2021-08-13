@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/jogo-da-velha-react/static/css/main.218b9a19.chunk.css",
-    "main.js": "/jogo-da-velha-react/static/js/main.558e5ef0.chunk.js",
-    "main.js.map": "/jogo-da-velha-react/static/js/main.558e5ef0.chunk.js.map",
+    "main.js": "/jogo-da-velha-react/static/js/main.d7508559.chunk.js",
+    "main.js.map": "/jogo-da-velha-react/static/js/main.d7508559.chunk.js.map",
     "runtime-main.js": "/jogo-da-velha-react/static/js/runtime-main.8d4c3080.js",
     "runtime-main.js.map": "/jogo-da-velha-react/static/js/runtime-main.8d4c3080.js.map",
-    "static/js/2.fc41a63c.chunk.js": "/jogo-da-velha-react/static/js/2.fc41a63c.chunk.js",
-    "static/js/2.fc41a63c.chunk.js.map": "/jogo-da-velha-react/static/js/2.fc41a63c.chunk.js.map",
+    "static/js/2.ea61c7a6.chunk.js": "/jogo-da-velha-react/static/js/2.ea61c7a6.chunk.js",
+    "static/js/2.ea61c7a6.chunk.js.map": "/jogo-da-velha-react/static/js/2.ea61c7a6.chunk.js.map",
     "static/js/3.ccdbbbac.chunk.js": "/jogo-da-velha-react/static/js/3.ccdbbbac.chunk.js",
     "static/js/3.ccdbbbac.chunk.js.map": "/jogo-da-velha-react/static/js/3.ccdbbbac.chunk.js.map",
     "index.html": "/jogo-da-velha-react/index.html",
     "static/css/main.218b9a19.chunk.css.map": "/jogo-da-velha-react/static/css/main.218b9a19.chunk.css.map",
-    "static/js/2.fc41a63c.chunk.js.LICENSE.txt": "/jogo-da-velha-react/static/js/2.fc41a63c.chunk.js.LICENSE.txt",
+    "static/js/2.ea61c7a6.chunk.js.LICENSE.txt": "/jogo-da-velha-react/static/js/2.ea61c7a6.chunk.js.LICENSE.txt",
     "static/media/404-not-found.e0ea9ddc.svg": "/jogo-da-velha-react/static/media/404-not-found.e0ea9ddc.svg",
     "static/media/styles.css": "/jogo-da-velha-react/static/media/background.5d7ba7b2.jpg",
     "static/media/user.ef8063a8.svg": "/jogo-da-velha-react/static/media/user.ef8063a8.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.8d4c3080.js",
-    "static/js/2.fc41a63c.chunk.js",
+    "static/js/2.ea61c7a6.chunk.js",
     "static/css/main.218b9a19.chunk.css",
-    "static/js/main.558e5ef0.chunk.js"
+    "static/js/main.d7508559.chunk.js"
   ]
 }
