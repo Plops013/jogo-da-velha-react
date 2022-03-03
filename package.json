@@ -1,7 +1,7 @@
 {
   "name": "jogo-da-velha",
   "version": "0.1.0",
-  "homepage": "https://plops013.github.io",
+  "homepage": "https://plops013.github.io/jogo-da-velha-react",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
